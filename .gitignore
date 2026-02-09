@@ -1,0 +1,11 @@
+# Build
+bin/
+obj/
+
+# Database (SQLite file - local dev data)
+app.db
+*.db
+
+# IDE
+.vs/
+*.user

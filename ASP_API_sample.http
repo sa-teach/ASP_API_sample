@@ -1,0 +1,53 @@
+@HostAddress = http://localhost:5223
+
+### Получить все категории
+GET {{HostAddress}}/api/categories
+Accept: application/json
+
+### Получить категорию по ID
+GET {{HostAddress}}/api/categories/1
+Accept: application/json
+
+### Создать категорию
+POST {{HostAddress}}/api/categories
+Content-Type: application/json
+
+{
+  "name": "Спорт",
+  "description": "Спортивные товары"
+}
+
+### Получить все товары
+GET {{HostAddress}}/api/products
+Accept: application/json
+
+### Получить товар по ID
+GET {{HostAddress}}/api/products/1
+Accept: application/json
+
+### Создать товар
+POST {{HostAddress}}/api/products
+Content-Type: application/json
+
+{
+  "name": "Мяч футбольный",
+  "description": "Размер 5",
+  "price": 1990,
+  "stockQuantity": 30,
+  "categoryId": 1
+}
+
+### Обновить товар
+PUT {{HostAddress}}/api/products/1
+Content-Type: application/json
+
+{
+  "name": "Смартфон X Pro",
+  "description": "Обновлённая модель",
+  "price": 54990,
+  "stockQuantity": 20,
+  "categoryId": 1
+}
+
+### Удалить товар
+DELETE {{HostAddress}}/api/products/4
