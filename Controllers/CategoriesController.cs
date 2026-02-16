@@ -17,9 +17,6 @@ public class CategoriesController : ControllerBase
         _unitOfWork = unitOfWork;
     }
 
-    /// <summary>
-    /// Получить все категории.
-    /// </summary>
     [HttpGet]
     [ProducesResponseType(typeof(IEnumerable<CategoryDto>), StatusCodes.Status200OK)]
     public async Task<ActionResult<IEnumerable<CategoryDto>>> GetAll(CancellationToken ct)
@@ -29,9 +26,6 @@ public class CategoriesController : ControllerBase
         return Ok(dtos);
     }
 
-    /// <summary>
-    /// Получить категорию по ID.
-    /// </summary>
     [HttpGet("{id:int}")]
     [ProducesResponseType(typeof(CategoryDto), StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status404NotFound)]
@@ -44,9 +38,6 @@ public class CategoriesController : ControllerBase
         return Ok(new CategoryDto(category.Id, category.Name, category.Description));
     }
 
-    /// <summary>
-    /// Создать новую категорию.
-    /// </summary>
     [HttpPost]
     [ProducesResponseType(typeof(CategoryDto), StatusCodes.Status201Created)]
     [ProducesResponseType(StatusCodes.Status400BadRequest)]
@@ -60,9 +51,6 @@ public class CategoriesController : ControllerBase
             new CategoryDto(category.Id, category.Name, category.Description));
     }
 
-    /// <summary>
-    /// Обновить категорию.
-    /// </summary>
     [HttpPut("{id:int}")]
     [ProducesResponseType(typeof(CategoryDto), StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status404NotFound)]
@@ -80,9 +68,6 @@ public class CategoriesController : ControllerBase
         return Ok(new CategoryDto(category.Id, category.Name, category.Description));
     }
 
-    /// <summary>
-    /// Удалить категорию.
-    /// </summary>
     [HttpDelete("{id:int}")]
     [ProducesResponseType(StatusCodes.Status204NoContent)]
     [ProducesResponseType(StatusCodes.Status404NotFound)]

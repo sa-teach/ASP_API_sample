@@ -3,10 +3,6 @@ using ASP_API_sample.Models;
 
 namespace ASP_API_sample.Repositories;
 
-/// <summary>
-/// Реализация Unit of Work.
-/// Создаёт экземпляры репозиториев и сохраняет изменения одной транзакцией.
-/// </summary>
 public class UnitOfWork : IUnitOfWork
 {
     private readonly AppDbContext _context;

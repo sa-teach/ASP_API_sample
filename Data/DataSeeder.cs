@@ -3,10 +3,6 @@ using Microsoft.EntityFrameworkCore;
 
 namespace ASP_API_sample.Data;
 
-/// <summary>
-/// Заполнение базы данных начальными данными.
-/// Вызывается при первом запуске приложения.
-/// </summary>
 public static class DataSeeder
 {
     public static async Task SeedAsync(AppDbContext context, CancellationToken ct = default)

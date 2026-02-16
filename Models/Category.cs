@@ -1,8 +1,5 @@
 namespace ASP_API_sample.Models;
 
-/// <summary>
-/// Категория товаров. Сущность для примера учебного API.
-/// </summary>
 public class Category
 {
     public int Id { get; set; }

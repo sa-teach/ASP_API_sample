@@ -17,9 +17,6 @@ public class ProductsController : ControllerBase
         _unitOfWork = unitOfWork;
     }
 
-    /// <summary>
-    /// Получить все товары.
-    /// </summary>
     [HttpGet]
     [ProducesResponseType(typeof(IEnumerable<ProductDto>), StatusCodes.Status200OK)]
     public async Task<ActionResult<IEnumerable<ProductDto>>> GetAll(CancellationToken ct)
@@ -29,9 +26,6 @@ public class ProductsController : ControllerBase
         return Ok(dtos);
     }
 
-    /// <summary>
-    /// Получить товар по ID.
-    /// </summary>
     [HttpGet("{id:int}")]
     [ProducesResponseType(typeof(ProductDto), StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status404NotFound)]
@@ -44,9 +38,6 @@ public class ProductsController : ControllerBase
         return Ok(new ProductDto(product.Id, product.Name, product.Description, product.Price, product.StockQuantity, product.CategoryId));
     }
 
-    /// <summary>
-    /// Создать новый товар.
-    /// </summary>
     [HttpPost]
     [ProducesResponseType(typeof(ProductDto), StatusCodes.Status201Created)]
     [ProducesResponseType(StatusCodes.Status400BadRequest)]
@@ -67,9 +58,6 @@ public class ProductsController : ControllerBase
             new ProductDto(product.Id, product.Name, product.Description, product.Price, product.StockQuantity, product.CategoryId));
     }
 
-    /// <summary>
-    /// Обновить товар.
-    /// </summary>
     [HttpPut("{id:int}")]
     [ProducesResponseType(typeof(ProductDto), StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status404NotFound)]
@@ -90,9 +78,6 @@ public class ProductsController : ControllerBase
         return Ok(new ProductDto(product.Id, product.Name, product.Description, product.Price, product.StockQuantity, product.CategoryId));
     }
 
-    /// <summary>
-    /// Удалить товар.
-    /// </summary>
     [HttpDelete("{id:int}")]
     [ProducesResponseType(StatusCodes.Status204NoContent)]
     [ProducesResponseType(StatusCodes.Status404NotFound)]

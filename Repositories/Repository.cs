@@ -3,10 +3,6 @@ using Microsoft.EntityFrameworkCore;
 
 namespace ASP_API_sample.Repositories;
 
-/// <summary>
-/// Базовая реализация репозитория.
-/// Использует DbContext для доступа к данным.
-/// </summary>
 public class Repository<T> : IRepository<T> where T : class
 {
     protected readonly DbContext _context;

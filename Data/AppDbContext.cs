@@ -3,10 +3,6 @@ using ASP_API_sample.Models;
 
 namespace ASP_API_sample.Data;
 
-/// <summary>
-/// Контекст базы данных Entity Framework Core.
-/// Представляет сессию работы с БД и содержит DbSet для всех сущностей.
-/// </summary>
 public class AppDbContext : DbContext
 {
     public AppDbContext(DbContextOptions<AppDbContext> options)
@@ -14,14 +10,8 @@ public class AppDbContext : DbContext
     {
     }
 
-    /// <summary>
-    /// Таблица категорий.
-    /// </summary>
     public DbSet<Category> Categories => Set<Category>();
 
-    /// <summary>
-    /// Таблица товаров.
-    /// </summary>
     public DbSet<Product> Products => Set<Product>();
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
